@@ -1,0 +1,24 @@
+name: Verify
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  flutter:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+      - run: flutter pub get
+      - run: flutter analyze
+      - run: flutter test
+      - run: flutter pub publish --dry-run
+      - run: |
+          cd example
+          flutter create --platforms web .
+          flutter build web --release --base-href /property-floorplan-viewer/
+      - uses: actions/upload-artifact@v4
+        with:
+          name: floorplan-web
+          path: example/build/web

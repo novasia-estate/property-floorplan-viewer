@@ -1,0 +1,11 @@
+.github/
+.dart_tool/
+build/
+example/.dart_tool/
+example/build/
+example/.metadata
+example/.gitignore
+.idea/
+example/.idea/
+*.iml
+example/*.iml

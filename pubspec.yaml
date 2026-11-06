@@ -1,0 +1,20 @@
+name: property_floorplan_viewer
+description: An accessible Flutter floor-plan viewer with validated polygon regions, room selection, keyboard navigation, zoom and portable JSON.
+version: 1.0.0
+homepage: https://novasia.estate/
+repository: https://github.com/novasia-estate/property-floorplan-viewer
+issue_tracker: https://github.com/novasia-estate/property-floorplan-viewer/issues
+topics:
+  - floorplan
+  - real-estate
+  - accessibility
+  - widgets
+environment:
+  sdk: '>=3.8.0 <4.0.0'
+  flutter: '>=3.32.0'
+dependencies:
+  flutter:
+    sdk: flutter
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
