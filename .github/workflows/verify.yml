@@ -11,8 +11,10 @@ jobs:
         with:
           channel: stable
       - run: flutter pub get
+      - run: cd example && flutter pub get
       - run: flutter analyze
       - run: flutter test
+      - run: cd example && flutter test
       - run: flutter pub publish --dry-run
       - run: |
           cd example

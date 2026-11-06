@@ -4,9 +4,11 @@ import 'package:floorplan_viewer_example/main.dart';
 void main() {
   testWidgets('switching floors clears selected metadata', (tester) async {
     await tester.pumpWidget(const MaterialApp(home: PlanExample()));
+    await tester.ensureVisible(find.text('Kitchen'));
     await tester.tap(find.text('Kitchen'));
     await tester.pump();
     expect(find.text('Kitchen · 10.0 m² supplied area'), findsOneWidget);
+    await tester.ensureVisible(find.text('Level 2'));
     await tester.tap(find.text('Level 2'));
     await tester.pump();
     expect(find.text('Synthetic office / Level 2'), findsOneWidget);
